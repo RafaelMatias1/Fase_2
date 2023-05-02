@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, ProgressBarAndroid, NavigationContainer } from 'react-native';
 
 
@@ -19,17 +20,24 @@ export default function telainicial() {
                 <Image style={styles.logo1} source={{uri: 'https://www.jornalcruzeiro.com.br/_midias/jpg/2021/12/23/buraco_na_rua-831589.jpg',}}/>
                 </View>
                 <View style={styles.Tela_Um_Meio_Direita}>
-                  <Text>Texto</Text>
-                  <Text>---------------------------------------------------------------------------------------------------------</Text>
+                    <View style={styles.info_cima}>
+                        <Text>Buraco Gigante</Text>
+                        <Text>Diluvio destruiu a rua com buraco gigante impossibilitando passagem de carro e ocasionamdo filas.</Text>
+                    </View>
+                    <View style={styles.info_baixo}>
+                        <Text>Locarização: Rua São Pedro,Areais,São José</Text>
+                    </View>
                   </View>
               </View>
               <View style={styles.Tela_Um_Meio_baixo}>
                 <View style={styles.Tela_Um_M_baixo_esquerda}>
                   <Text>progresso</Text>
-                    <ProgressBarAndroid style={styles.barraProgress}
-                      styleAttr="Horizontal"
-                      indeterminate={false}
-                      progress={0.5}/>
+                  <View style={styles.barraProgress}>
+                    <View style={styles.barraProgressP}>
+
+                    </View>
+                  </View>
+
                 </View>
                 <View style={styles.Tela_Um_M_baixo_direito}>
                   <TouchableOpacity onPress={() => {/* do this */}}>
@@ -40,7 +48,7 @@ export default function telainicial() {
                       justifyContent: 'center',   
                       height: 50,
                       width: 100,
-                      borderRadius: '10%',
+                      borderRadius: 10,
                       }}>
                       <Text style={{ color: 'white' }}>Assinar</Text>
                     </View>
@@ -53,8 +61,8 @@ export default function telainicial() {
             <Image style={styles.logo2} source={{uri: 'https://s3.static.brasilescola.uol.com.br/be/2022/09/abaixo-assinado.jpg',}}/>
             </View>
             <View style={styles.Tela_Dois_Direita}>
-              <Text>Texto</Text>
-              <Text>---------------------------------------------------------------------------------------------------------</Text>
+              <Text>*RUA*</Text>
+              <Text>*DESCRICAO/MOTIVOS------------------------------------------------------------------------------------------------------------------------------------------------------------</Text>
               
             </View>
           </View>
@@ -119,9 +127,9 @@ const styles = StyleSheet.create({
 
   },
   Informação: {
-
-    width: '80%',
-    height: '70%',
+    
+    width: '90%',
+    height: '100%',
     justifyContent:'space-evenly',
 
   },
@@ -165,6 +173,18 @@ const styles = StyleSheet.create({
     margin:'5%',
 
   },
+  info_cima:{
+
+    width: '100%',
+    height: '50%',
+
+  },
+  info_baixo:{
+
+    width: '100%',
+    height: '50%',
+
+  },
   Tela_Um_Meio_Esquerda:{
 
     backgroundColor:'white',
@@ -177,7 +197,7 @@ const styles = StyleSheet.create({
 
     width: '100%',
     height: '100%',
-    borderRadius:'20%',
+    borderRadius:20,
 
   },
   Tela_Um_Meio_baixo:{
@@ -196,6 +216,25 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent:'center',
     alignItems:'center',
+
+  },
+  barraProgress:{
+
+    width: '100%',
+    height: '15%',
+    borderColor:'black',
+    borderRadius:25,
+    backgroundColor:'white',
+    borderWidth: 1,
+
+  },
+  barraProgressP:{
+
+    width: '50%',
+    height: '100%',
+    borderColor:'black',
+    borderRadius:25,
+    backgroundColor:'#38CC20',
 
   },
   Tela_Um_M_baixo_direito:{
